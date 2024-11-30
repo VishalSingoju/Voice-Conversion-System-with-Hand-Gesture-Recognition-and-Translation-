@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+        }
+        .registration-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .registration-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .registration-container input[type="text"], .registration-container input[type="password"], .registration-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .registration-container input[type="submit"] {
+            background: #ff7e5f;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .registration-container input[type="submit"]:hover {
+            background: #feb47b;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var firstName = document.forms["registrationForm"]["firstName"].value;
+            var lastName = document.forms["registrationForm"]["lastName"].value;
+            var username = document.forms["registrationForm"]["username"].value;
+            var password = document.forms["registrationForm"]["password"].value;
+            var error = document.getElementById("error-message");
+            if (firstName == "" || lastName == "" || username == "" || password == "") {
+                error.style.display = "block";
+                error.innerHTML = "All fields are required.";
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Sign up</h2>
+        <form name="registrationForm" onsubmit="return validateForm()" action="signin.html">
+            <input type="text" name="firstName" placeholder="First Name" required>
+            <input type="text" name="lastName" placeholder="Last Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <select name="gender" required>
+                <option value="" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Register">
+            <div id="error-message" class="error"></div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .container h1 {
+            margin-bottom: 30px;
+            color: #333;
+            font-style: oblique;
+            font-size: 24px;
+        }
+        .container button {
+            background: #5A67D8;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 15px;
+            font-size: 18px;
+            transition: background 0.3s ease;
+        }
+        .container button:hover {
+            background: #434CBB;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Voice Conversion System with Hand Gesture Recognition and Translation</h1>
+        <button onclick="location.href='signin.html'">Sign in</button>
+        <button onclick="location.href='signup.html'">Sign up</button>
+    </div>
+</body>
+</html>
